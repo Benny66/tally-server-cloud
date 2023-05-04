@@ -16,28 +16,28 @@ func main() {
 
 	// http.HandleFunc("/", service.IndexHandler)
 	// http.HandleFunc("/api/count", service.CounterHandler)
-	http.HandleFunc("auth-login", service.AuthLogin)
-	http.HandleFunc("benediction", service.Benediction)
+	http.HandleFunc("/api/auth-login", service.AuthLogin)
+	http.HandleFunc("/api/benediction", service.Benediction)
 	// http.HandleFunc("upload-file", service.UploadFile)
-	http.HandleFunc("get-weather", service.GetWeather)
+	http.HandleFunc("/api/get-weather", service.GetWeather)
 
 	//
-	http.HandleFunc("get-user-info", service.GetUserInfo)
-	http.HandleFunc("set-user-info", service.SetUserInfo)
+	http.HandleFunc("/api/get-user-info", service.GetUserInfo)
+	http.HandleFunc("/api/set-user-info", service.SetUserInfo)
 
-	http.HandleFunc("get-user-book", service.GetUserBooks)
-	http.HandleFunc("get-book-info", service.GetUserBookInfo)
-	http.HandleFunc("set-book-edit", service.SetBookEdit)
+	http.HandleFunc("/api/get-user-book", service.GetUserBooks)
+	http.HandleFunc("/api/get-book-info", service.GetUserBookInfo)
+	http.HandleFunc("/api/set-book-edit", service.SetBookEdit)
 
 	http.HandleFunc("/api/get-category-list", service.GetCategoryList)
-	http.HandleFunc("set-category-edit", service.SetCategoryEdit)
+	http.HandleFunc("/api/set-category-edit", service.SetCategoryEdit)
 
-	http.HandleFunc("get-tally-main-total", service.GetTallyMainTotal)
-	http.HandleFunc("get-tally-main-list", service.GetTallyMainList)
+	http.HandleFunc("/api/get-tally-main-total", service.GetTallyMainTotal)
+	http.HandleFunc("/api/get-tally-main-list", service.GetTallyMainList)
 
-	http.HandleFunc("set-tally-edit", service.SetTallyMainEdit)
-	http.HandleFunc("get-tally-info", service.GetTallyMainInfo)
-	http.HandleFunc("get-tally-sta", service.GetTallySta)
+	http.HandleFunc("/api/set-tally-edit", service.SetTallyMainEdit)
+	http.HandleFunc("/api/get-tally-info", service.GetTallyMainInfo)
+	http.HandleFunc("/api/get-tally-sta", service.GetTallySta)
 
 	log.Fatal(http.ListenAndServe(":80", nil))
 }
