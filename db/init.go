@@ -23,8 +23,7 @@ func Init() error {
 	if dataBase == "" {
 		dataBase = "golang_demo"
 	}
-	fmt.Println(source, user, pwd, addr, dataBase)
-	source = fmt.Sprintf(source, "root", "root123456", "127.0.0.1:33060", "tally")
+	source = fmt.Sprintf(source, user, pwd, addr, dataBase)
 	fmt.Println("start init mysql with ", source)
 
 	db, err := gorm.Open(mysql.Open(source), &gorm.Config{
