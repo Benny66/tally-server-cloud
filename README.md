@@ -1,4 +1,4 @@
-# wxcloudrun-golang
+# github.com/Benny66/tally-server-cloud
 [![GitHub license](https://img.shields.io/github/license/WeixinCloud/wxcloudrun-express)](https://github.com/WeixinCloud/wxcloudrun-express)
 ![GitHub package.json dependency version (prod)](https://img.shields.io/badge/golang-1.17.1-green)
 

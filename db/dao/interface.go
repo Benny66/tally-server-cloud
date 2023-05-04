@@ -1,7 +1,7 @@
 package dao
 
 import (
-	"wxcloudrun-golang/db/model"
+	"github.com/Benny66/tally-server-cloud/db/model"
 )
 
 // CounterInterface 计数器数据模型接口

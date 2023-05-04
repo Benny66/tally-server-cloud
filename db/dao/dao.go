@@ -1,8 +1,8 @@
 package dao
 
 import (
-	"wxcloudrun-golang/db"
-	"wxcloudrun-golang/db/model"
+	"github.com/Benny66/tally-server-cloud/db"
+	"github.com/Benny66/tally-server-cloud/db/model"
 )
 
 const tableName = "Counters"
