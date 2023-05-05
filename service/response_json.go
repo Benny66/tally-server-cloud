@@ -62,7 +62,7 @@ func (r *responseJson) Success(data interface{}) {
 func (r *responseJson) Error(errorCode int, params ...interface{}) {
 	res := ResultData{
 		Code: errorCode,
-		Msg:  "error",
+		Msg:  fmt.Sprint(params...),
 		Data: "",
 	}
 	msg, err := json.Marshal(res)
@@ -78,7 +78,6 @@ func (r *responseJson) Error(errorCode int, params ...interface{}) {
 	r.w.WriteHeader(httpCode)
 	r.w.Write(msg)
 }
-
 
 type ResultData struct {
 	Code int         `json:"code"`
