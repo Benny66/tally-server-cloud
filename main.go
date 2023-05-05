@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 
@@ -9,10 +8,10 @@ import (
 	"github.com/Benny66/tally-server-cloud/service"
 )
 
+var _ = db.Get()
+
 func main() {
-	if err := db.Init(); err != nil {
-		panic(fmt.Sprintf("mysql init failed with %+v", err))
-	}
+
 
 	// http.HandleFunc("/", service.IndexHandler)
 	// http.HandleFunc("/api/count", service.CounterHandler)
@@ -41,5 +40,3 @@ func main() {
 
 	log.Fatal(http.ListenAndServe(":80", nil))
 }
-
-

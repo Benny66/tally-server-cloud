@@ -13,8 +13,7 @@ import (
 var dbInstance *gorm.DB
 
 // Init 初始化数据库
-func Init() error {
-
+func init() {
 	source := "%s:%s@tcp(%s)/%s?readTimeout=1500ms&writeTimeout=1500ms&charset=utf8&loc=Local&&parseTime=true"
 	user := os.Getenv("MYSQL_USERNAME")
 	pwd := os.Getenv("MYSQL_PASSWORD")
@@ -23,6 +22,7 @@ func Init() error {
 	if dataBase == "" {
 		dataBase = "golang_demo"
 	}
+	// fmt.Println(source, user, pwd, addr, dataBase)
 	source = fmt.Sprintf(source, user, pwd, addr, dataBase)
 	fmt.Println("start init mysql with ", source)
 
@@ -32,13 +32,13 @@ func Init() error {
 		}})
 	if err != nil {
 		fmt.Println("DB Open error,err=", err.Error())
-		return err
+		panic(err.Error())
 	}
 
 	sqlDB, err := db.DB()
 	if err != nil {
 		fmt.Println("DB Init error,err=", err.Error())
-		return err
+		panic(err.Error())
 	}
 
 	// 用于设置连接池中空闲连接的最大数量
@@ -49,9 +49,7 @@ func Init() error {
 	sqlDB.SetConnMaxLifetime(time.Hour)
 
 	dbInstance = db
-
 	fmt.Println("finish init mysql with ", source)
-	return nil
 }
 
 // Get ...
